@@ -2444,6 +2444,19 @@ tauri::Builder::default()
       .set_title_bar_style(style)
       .map_err(Into::into)
   }
+
+  /// Changes the window controls position. Requires overlay title bar style and decorations.
+  ///
+  /// ## Platform-specific
+  ///
+  /// - **Linux / Windows / iOS / Android:** Unsupported.
+  pub fn set_traffic_light_position<P: Into<Position>>(&self, position: P) -> crate::Result<()> {
+    self
+      .window
+      .dispatcher
+      .set_traffic_light_position(position.into())
+      .map_err(Into::into)
+  }
 }
 
 /// Progress bar state.

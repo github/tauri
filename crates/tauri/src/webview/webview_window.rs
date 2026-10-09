@@ -2310,6 +2310,15 @@ impl<R: Runtime> WebviewWindow<R> {
   pub fn set_title_bar_style(&self, style: tauri_utils::TitleBarStyle) -> crate::Result<()> {
     self.window.set_title_bar_style(style)
   }
+
+  /// Changes the window controls position. Requires overlay title bar style and decorations.
+  ///
+  /// ## Platform-specific
+  ///
+  /// - **Linux / Windows / iOS / Android:** Unsupported.
+  pub fn set_traffic_light_position<P: Into<Position>>(&self, position: P) -> crate::Result<()> {
+    self.window.set_traffic_light_position(position)
+  }
 }
 
 /// Desktop window setters and actions.

@@ -55,10 +55,10 @@ uuid = { version = "1", features = ["v4"], optional = true }
 url = "2"
 anyhow = "1"
 thiserror = "2"
-tauri-runtime = { workspace = true }
-tauri-macros = { workspace = true }
-tauri-utils = { workspace = true, features = ["resources"] }
-tauri-runtime-wry = { workspace = true, optional = true }
+tauri-runtime = { version = "~2.12.1" }
+tauri-macros = { version = "~2.7.1" }
+tauri-utils = { version = "~2.10.1", features = ["resources"] }
+tauri-runtime-wry = { version = "~2.12.1", default-features = false, optional = true }
 getrandom = "0.3"
 serde_repr = "0.1"
 http = "1"
@@ -169,8 +169,8 @@ objc2-ui-kit = { version = "0.3.2", default-features = false, features = [
 [build-dependencies]
 glob = "0.3"
 heck = "0.5"
-tauri-build = { workspace = true }
-tauri-utils = { workspace = true, features = ["build-2"] }
+tauri-build = { version = "2.7.1", default-features = false }
+tauri-utils = { version = "~2.10.1", features = ["build-2"] }
 
 [dev-dependencies]
 proptest = "1.6.0"
